@@ -425,8 +425,6 @@ public abstract class AbstractHistogram extends AbstractHistogramBase implements
         int countsIndex = countsArrayIndex(value);
         try {
             addToCountAtIndex(countsIndex, count);
-        } catch (ArrayIndexOutOfBoundsException ex) {
-            handleRecordException(count, value, ex);
         } catch (IndexOutOfBoundsException ex) {
             handleRecordException(count, value, ex);
         }
@@ -438,8 +436,6 @@ public abstract class AbstractHistogram extends AbstractHistogramBase implements
         int countsIndex = countsArrayIndex(value);
         try {
             incrementCountAtIndex(countsIndex);
-        } catch (ArrayIndexOutOfBoundsException ex) {
-            handleRecordException(1, value, ex);
         } catch (IndexOutOfBoundsException ex) {
             handleRecordException(1, value, ex);
         }
